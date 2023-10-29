@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "api:download": "wget http://localhost:3000/api-yaml -O ./src/shared/api/schema.yaml",
+    "api:generate": "orval"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.0.5",
-    "axios": "^1.5.1",
+    "axios": "^1.6.0",
     "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18"
@@ -19,10 +21,13 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "ajv": "^8.12.0",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "13.5.6",
+    "orval": "^6.19.1",
     "postcss": "^8",
+    "prettier": "^3.0.3",
     "tailwindcss": "^3",
     "typescript": "^5"
   }
