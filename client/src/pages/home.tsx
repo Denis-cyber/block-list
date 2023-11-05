@@ -7,6 +7,7 @@ import { UiLink } from "@/shared/ui/ui-link";
 import { UiSpinner } from "@/shared/ui/ui-spinner";
 // import { UiPageSpinner } from "@/shared/ui/ui-page-spinner";
 import { UiHeader } from "@/shared/ui/ui-header";
+import { SignOutButton } from "@/features/auth";
 
 export function HomePage() {
   const { data } = useQuery({
@@ -16,7 +17,13 @@ export function HomePage() {
 
   return (
     <main className={`min-h-screen`}>
-      <UiHeader right={<div>{data?.email}</div>} />
+      <UiHeader
+        right={
+          <div>
+            {data?.email} <SignOutButton />{" "}
+          </div>
+        }
+      />
       <UiButton variant="primary">Hey</UiButton>
       <UiButton variant="secondary">Hey</UiButton>
       <UiButton variant="outlined">Sign Out</UiButton>
